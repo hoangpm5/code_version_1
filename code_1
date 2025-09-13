@@ -6,6 +6,7 @@ with st.form(key="Form", clear_on_submit=False):
     opt1=st.multiselect('Whats your favorite appetizers?',appetizers)
     opt2=st.multiselect('Whats your favorite main courses?',main_course)
     opt3=st.multiselect('Whats your favorite dessert??',dessert)
+
     submitted = st.form_submit_button()
     if submitted:
         st.write('Your choices are:')
