@@ -1,0 +1,30 @@
+import streamlit as st
+appetizers = ['Caesar Salad', 'Garlic bread', 'Shrimp cocktail', 'Meatballs with dipping sauce','Cheese platter','Spring rolls','Dumplings']
+main_course = ['Grilled steak with vegetables', 'Spaghetti Bolognese', 'Lasagna', 'Roast salmon with lemon butter','Lamb chops with rosemary','BBQ ribs','Fish and chips']
+dessert=['Chocolate cake', 'Cheesecake', 'Apple pie with ice cream', 'Tiramisu','Brownies','Mochi','Panna cotta']
+with st.form(key="Form", clear_on_submit=False):
+    opt1=st.multiselect('Whats your favorite appetizers?',appetizers)
+    opt2=st.multiselect('Whats your favorite main courses?',main_course)
+    opt3=st.multiselect('Whats your favorite dessert??',dessert)
+    submitted = st.form_submit_button()
+    if submitted:
+        st.write('Your choices are:')
+        st.markdown("<p style='font-size:20px;'>**APPETIZERS**</p>", unsafe_allow_html=True)
+        if len(opt1)==0:
+            st.write('You havent chosen an appetizer.')
+        else:
+            for i in range(len(opt1)):
+                st.write(opt1[i])
+        st.markdown("<p style='font-size:20px;'>**MAIN COURSES**</p>", unsafe_allow_html=True)
+        if len(opt2)==0:
+            st.write('You havent chosen an appetizer.')
+        else:
+            for i in range(len(opt2)):
+                st.write(opt2[i])
+        #st.markdown("<h1>DESSERTS</h1>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size:20px;'>**DESSERTS**</p>", unsafe_allow_html=True)
+        if len(opt3)==0:
+            st.write('You havent chosen an appetizer.')
+        else:
+            for i in range(len(opt3)):
+                st.write(opt3[i])
